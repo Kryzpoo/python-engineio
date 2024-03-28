@@ -11,7 +11,9 @@ class Thread(gevent.Greenlet):  # pragma: no cover
     This wrapper class provides gevent Greenlet interface that is compatible
     with the standard library's Thread class.
     """
-    def __init__(self, target, args=[], kwargs={}):
+    def __init__(self, target, args=None, kwargs=None):
+        args = [] if args is None else args
+        kwargs = {} if kwargs is None else kwargs
         super().__init__(target, *args, **kwargs)
 
     def _run(self):
