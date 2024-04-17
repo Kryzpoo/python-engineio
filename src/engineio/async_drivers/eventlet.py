@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 
 from eventlet.green.threading import Event
 from eventlet import queue, sleep, spawn
